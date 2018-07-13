@@ -1,8 +1,8 @@
 export default {
   APP_NAME: 'Example App',
-  DB_HOST: 'ds018848.mlab.com',
+  DB_HOST: '',
   DB_PORT: 18848,
-  DB_DATA: 'blogapp',
-  DB_USER: 'admin',
-  DB_PASS: '123456a'
+  DB_DATA: '',
+  DB_USER: '',
+  DB_PASS: ''
 }
