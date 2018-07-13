@@ -1,0 +1,43 @@
+{
+  "name": "express-node-es67-structure-example",
+  "version": "1.0.0",
+  "description": "Example app based on express.js framework.",
+  "main": "bootstrap.js",
+  "scripts": {
+    "gulp": "gulp",
+    "serve": "NODE_ENV=production node dist/bootstrap.js",
+    "build": "rimraf dist && babel src --out-dir dist --copy-files --ignore src/resources",
+    "prod": "npm run build && npm run serve",
+    "dev": "NODE_ENV=development nodemon -w ./src"
+  },
+  "author": "boski-src",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.2.0",
+    "method-override": "^3.0.0",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.1",
+    "passport": "^0.4.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.3",
+    "session-memory-store": "^0.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}

@@ -1,0 +1,32 @@
+extends ../../layout
+
+block title
+  | Books list
+
+block content
+  if (books.length)
+    each book in books
+      div.row.mt-3
+
+        div.col-lg-5.col-xl-4.mb-4
+          div.view.overlay.rounded.z-depth-1
+            img.img-fluid(src=`${ book.image }` alt="" height="200px")
+            a(href=`${ book.image }` target="_blank")
+              .mask.rgba-white-slight
+
+        div.col-lg-7.col-xl-7.ml-xl-4.mb-4
+          h3.mb-3.font-weight-bold.dark-grey-text
+            strong #{ book.title }
+          p.grey-text
+            | #{ book.description }
+          a.btn.btn-primary.btn-md(href=`/books/${ book._id }/edit`)
+            | EDIT
+          a.btn.btn-secondary.btn-md(href=`/books/${ book._id }`)
+            | MORE
+
+      if (books.length > 1)
+        hr.mb-5
+  else
+    div.col-md-12
+      div.alert.alert-warning.text-center
+        | No results found.

@@ -1,0 +1,26 @@
+extends ../../layout
+
+block title
+  |  #{ title }
+
+block content
+  div.col-md-8.mb-4
+    div.card.mb-4(style="visibility: visible; animation-name: fadeIn;")
+      img.img-fluid(src=`${ image }` alt="")
+
+    div.card.mb-4(style="visibility: visible; animation-name: fadeIn;")
+      div.card-body
+        p.h5.my-4 #{ title }
+        p #{ description }
+        small.float-right
+          | Created at:
+          b  #{ createdAt.toLocaleString() }
+          br
+          | Updated at:
+          b  #{ updatedAt.toLocaleString() }
+
+  div.col-md-4.mb-4
+    a.btn.btn-primary.btn-md.w-100(href=`/books/${ _id }/edit`) EDIT
+    form(method="POST" action=`/books/${ _id }` enctype="application/x-www-form-urlencoded")
+      input(type="hidden" name="_method" value="DELETE")
+      button.btn.btn-danger.btn-md.w-100(type="submit") DELETE

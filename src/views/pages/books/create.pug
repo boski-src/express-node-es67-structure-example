@@ -1,0 +1,22 @@
+extends ../../layout
+
+block title
+  | Add book
+
+block content
+  div.col-md-12
+    div.card.mb-4
+      div.card-body
+        form(method="POST" action="/books" accept-charset="UTF-8")
+
+          label.grey-text Title*
+          input.form-control(type="text" name="title" maxlength="100")
+          br
+          label.grey-text Description*
+          textarea.form-control(name="description" maxlength="300" rows="4")
+          br
+          label.grey-text Link to image*
+          input.form-control(type="url" name="image")
+
+          div.text-center.mt-4
+            button.btn.btn-primary.btn-md.waves-effect.waves-light(type="submit") Add
